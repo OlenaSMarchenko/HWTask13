@@ -1,21 +1,27 @@
-public class Manager extends Employee {
+public class Manager extends Worker {
 
-    protected int numberOfSubordinates;
+    private int numberOfSubordinates;
+
+    public Manager(int baseSalary, String name, int numberOfSubordinates) {
+        super(baseSalary, name);
+        this.numberOfSubordinates = numberOfSubordinates;
+    }
 
     public int getNumberOfSubordinates() {
         return numberOfSubordinates;
     }
 
-    public void setNumberOfSubordinates() {
+    public void setNumberOfSubordinates(int numberOfSubordinates) {
+        this.numberOfSubordinates = numberOfSubordinates;
 
     }
 
     @Override
     public int getSalary() {
         if (numberOfSubordinates == 0) {
-            return baseSalary;
+            return super.getSalary();
         } else {
-            return getBaseSalary() * (numberOfSubordinates / 100 * 3);
+            return getBaseSalary() * (getNumberOfSubordinates() / 100 * 3);
         }
     }
 }

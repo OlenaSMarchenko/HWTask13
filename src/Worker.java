@@ -1,6 +1,10 @@
 public class Worker extends Employee {
-    @Override
+
+    public Worker(int baseSalary, String name) {
+        super(baseSalary, name);
+    }
+
     public int getSalary() {
-        return baseSalary;
+        return 0;
     }
 }

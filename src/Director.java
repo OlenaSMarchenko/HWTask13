@@ -1,10 +1,15 @@
 public class Director extends Manager {
+
+    public Director(int baseSalary, String name, int numberOfSubordinates) {
+        super(baseSalary, name, numberOfSubordinates);
+    }
+
     @Override
     public int getSalary() {
-        if (numberOfSubordinates == 0) {
-            return baseSalary;
+        if (getNumberOfSubordinates() == 0) {
+            return super.getSalary();
         } else {
-            return baseSalary * (numberOfSubordinates / 100 * 9);
+            return getBaseSalary() * (getNumberOfSubordinates() / 100 * 9);
         }
     }
 }
