@@ -1,29 +1,18 @@
-public class Manager extends Worker {
+public final class Manager extends BaseManager { //Классы Manager и Director должны быть финальными
 
-    private int numberOfSubordinates;
+
+    private static final int MULT = 3;//Коэффициенты для расчета ЗП у Manager и Director должны быть константами
 
     public Manager(int baseSalary, String name, int numberOfSubordinates) {
-        super(baseSalary, name);
-        this.numberOfSubordinates = numberOfSubordinates;
-    }
-
-    public int getNumberOfSubordinates() {
-        return numberOfSubordinates;
-    }
-
-    public void setNumberOfSubordinates(int numberOfSubordinates) {
-        this.numberOfSubordinates = numberOfSubordinates;
-
+        super(baseSalary, name, numberOfSubordinates);
     }
 
     @Override
-    public int getSalary() {
-        if (numberOfSubordinates == 0) {
-            return super.getSalary();
-        } else {
-            return getBaseSalary() * (getNumberOfSubordinates() / 100 * 3);
-        }
+    protected int getMult() {
+        return MULT;
     }
+
+
 }
 
 

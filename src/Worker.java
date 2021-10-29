@@ -4,7 +4,13 @@ public class Worker extends Employee {
         super(baseSalary, name);
     }
 
+    @Override
+    public final int getBaseSalary() { //Worker.getBaseSalary должен быть финальным
+        return super.getBaseSalary();
+    }
+
+    @Override
     public int getSalary() {
-        return 0;
+        return getBaseSalary();
     }
 }
