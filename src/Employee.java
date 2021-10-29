@@ -1,4 +1,4 @@
-public class Employee {
+public abstract class Employee {
     private int baseSalary;
     private String name;
     private  int salary;
@@ -26,9 +26,8 @@ public class Employee {
         this.name = name;
     }
 
-    public int getSalary() {
-        return salary;
-    }
+    public abstract int getSalary(); //Employee.getSalary должен быть абстрактный
+
 }
 
 
