@@ -1,4 +1,4 @@
-public abstract class BaseManager extends Worker {
+public abstract class BaseManager extends Worker implements IManager {
 
     private int numberOfSubordinates;
 
