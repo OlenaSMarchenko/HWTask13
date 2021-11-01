@@ -1,7 +1,7 @@
 public class Utils {
 
     //methods  поиск сотрудника в массиве по его имени
-    public static Employee findByName(String name, Employee[] array) {
+    public static IEmployee findByName(String name, IEmployee[] array) {
         for (int i = 0; i < array.length; i++) {
             if (name.equals(array[i].getName())) {
                 return array[i];
@@ -11,7 +11,7 @@ public class Utils {
     }
 
     //        поиск сотрудника в массиве по вхождению указанной строки в его имени
-    public static Employee findBySubName(Employee[] array, String subName) {
+    public static IEmployee findBySubName(IEmployee[] array, String subName) {
         for (int i = 0; i < array.length; i++) {
             if (array[i].getName().contains(subName)) {
                 return array[i];
@@ -21,7 +21,7 @@ public class Utils {
     }
 
     //        подсчет зарплатного бюджета для всех сотрудников в массиве
-    public static int  getSalarySum(Employee[] array) {
+    public static int  getSalarySum(IEmployee[] array) {
         int result = 0;
         for (int i = 0; i < array.length; i++) {
             result += array[i].getSalary();
@@ -31,12 +31,12 @@ public class Utils {
 
 //        поиск наименьшей зарплаты в массиве
 //        поиск наименьшего количества подчиненных в массиве менеджеров
-    public static Manager getMinSubordinates(Manager[] array) {
+    public static IManager getMinSubordinates(IManager[] array) {
         if (array == null || array.length == 0) {
             return null;
         }
 
-        Manager result = array[0];
+        IManager result = array[0];
         for (int i = 1; i < array.length; i++) {
             if (result.getNumberOfSubordinates() > array[i].getNumberOfSubordinates()) {
                 result = array[i];
